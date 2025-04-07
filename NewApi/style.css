@@ -1,53 +1,112 @@
-/******************************************
-/* CSS
-/*******************************************/
-
-/* Box Model Hack */
-*{
-  box-sizing: border-box;
-}
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-img{
-  display: block;
-  margin: 0 auto;
-  height: 300px;
-}
-
+/* Body styles for space theme */
 body {
   margin: 0;
   padding: 0;
-  height: 100vh; /* full height of the viewport */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif; /* Space-like font */
+  background: #0f3460; /* Dark space blue */
+  color: white;
+  overflow: auto; /* Allow scrolling if content overflows */
 }
 
+/* Main header styling */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00d2d2; /* Glowing cyan color */
+  text-shadow: 0 0 15px rgba(0, 210, 210, 0.8); /* Glowing text effect */
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(15, 52, 96, 0.8); /* Slightly transparent background for header */
+  max-width: 90%; /* Ensure h1 doesn’t stretch too much */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  word-wrap: break-word; /* Allow the text to wrap if necessary */
+  overflow-wrap: break-word; /* Handle long text gracefully */
+}
+
+/* Title styling */
 h2 {
   margin-bottom: 20px;
-  color: green;
+  font-size: 2rem;
+  color: #00d2d2; /* Glowing cyan color */
+  text-shadow: 0 0 10px rgba(0, 210, 210, 0.8); /* Glowing text effect */
+  letter-spacing: 2px;
+  text-align: center;
 }
 
+/* Button styles */
 button {
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 12px 24px;
+  font-size: 1.2rem;
   cursor: pointer;
   border: none;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  background-color: rgba(0, 210, 210, 0.8);
+  color: rgba(4, 24, 49, 0.8); 
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: rgba(0, 210, 210, 0.8);
+  transform: scale(1.1); /* Button enlarges on hover for a futuristic effect */
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+/* Glowing button when clicked */
+button:active {
+  background-color: rgba(0, 210, 210, 0.8);
+  box-shadow: 0 0 25px rgba(0, 210, 210, 0.8);
+  transform: scale(1.05);
+}
+
+/* Styling for paragraphs and other text */
+p {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #ccc;
+  text-align: center;
+  letter-spacing: 1px;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* For smaller screens, adjust h1 and h2 font sizes */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    padding: 15px;
+    max-width: 80%; /* Reduce width on smaller screens */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* For very small screens (mobile portrait) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    max-width: 100%; /* Allow h1 to take full width */
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
